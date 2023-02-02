@@ -11,8 +11,7 @@ public class PublicationToPublicationResponse implements Imapper<Publication, Pu
         PublicationResponse publicationResponse=new PublicationResponse();
         publicationResponse.setId(in.getId());
         publicationResponse.setTitle(in.getTitle());
-        publicationResponse.setDescription(in.getDescription());
-        publicationResponse.setContents(in.getContents());
+        publicationResponse.setContents(in.getContent());
         publicationResponse.setCreateAt(in.getCreateAt());
         return publicationResponse;
     }

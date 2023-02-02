@@ -11,8 +11,7 @@ public class PublicationRequestToPublication implements Imapper<PublicationReque
     public Publication map(PublicationRequest in) {
         Publication publication= new Publication();
         publication.setTitle(in.getTitle());
-        publication.setDescription(in.getDescription());
-        publication.setContents(in.getContents());
+        publication.setContent(in.getContents());
         publication.setCreateAt(LocalDateTime.now());
         return publication;
     }

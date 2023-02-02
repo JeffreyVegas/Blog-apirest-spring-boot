@@ -20,13 +20,11 @@ public class PublicationController {
         service.createPublication(publicationRequest);
         System.out.println("publication created");
     }
-
     @GetMapping("/{id}")
     public PublicationResponse getPublicationById(@PathVariable("id") Long id){
         PublicationResponse publication= service.getPublication(id);
         return publication;
     }
-
     @GetMapping
     public List<Publication> getAllPublications(){
         return service.getPublications();
