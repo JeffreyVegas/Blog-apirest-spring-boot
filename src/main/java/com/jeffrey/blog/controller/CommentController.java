@@ -7,6 +7,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
+
 import static org.springframework.http.HttpStatus.OK;
 import java.util.List;
 
@@ -16,7 +18,7 @@ public class CommentController {
     @Autowired
     CommentService commentService;
     @PostMapping
-    public ResponseEntity<CommentDto> createComment(@RequestBody CommentDto commentDto){
+    public ResponseEntity<CommentDto> createComment(@Valid @RequestBody CommentDto commentDto){
         System.out.println(commentDto.getPublicationId());
         return new ResponseEntity<>(commentService.createComment(commentDto), HttpStatus.CREATED);
     }
